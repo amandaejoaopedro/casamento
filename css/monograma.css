@@ -1,8 +1,11 @@
 .monograma-inicial-container {
   position: absolute;
-  bottom: 40px;
+  top: 100%; /* Posiciona no limite inferior do .hero */
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Centraliza X e sobe 50% da própria altura */
   z-index: 2;
 }
 
@@ -10,6 +13,13 @@
   width: 120px;
   height: 120px;
   object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .monograma-inicial-container img {
+    width: 90px;
+    height: 90px;
+  }
 }
 
 .monograma-final-container {
@@ -42,4 +52,11 @@
   height: 300px;
   object-fit: contain;
   opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .monograma-inicial-container img {
+    width: 90px; /* Reduz levemente para não ficar desproporcional no celular */
+    height: 90px;
+  }
 }

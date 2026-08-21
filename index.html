@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Amanda e João Pedro</title>
+    <title>AMANDA E JOÃO PEDRO</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;600;700&family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;600&display=swap"
       rel="stylesheet"
@@ -45,7 +45,11 @@
       <!-- Monograma dentro da imagem -->
 
       <div class="hero-content">
-        <h2 class="titulo-principal">Amanda e João Pedro</h2>
+        <h2 class="titulo-principal">
+          <span>AMANDA</span>
+          <span class="e">&</span>
+          <span>JOÃO PEDRO</span>
+        </h2>
 
         <div class="countdown-container">
           <div class="countdown-box">
@@ -85,7 +89,7 @@
 
       <!-- SEÇÃO NOSSA HISTÓRIA -->
       <section id="historia" class="section-block">
-        <h2>Nossa História</h2>
+        <h2>NOSSA HISTÓRIA</h2>
         <div class="separador">
           <span></span>
         </div>
@@ -153,7 +157,7 @@
 
       <!-- SEÇÃO CERIMÔNIA -->
       <section id="cerimonia" class="section-block">
-        <h2>A Cerimônia</h2>
+        <h2>A CERIMÔNIA</h2>
         <div class="separador">
           <span></span>
         </div>
@@ -201,7 +205,7 @@
 
       <!-- SEÇÃO RECEPÇÃO -->
       <section id="recepcao" class="section-block">
-        <h2>A Recepção</h2>
+        <h2>A RECEPÇÃO</h2>
         <div class="separador">
           <span></span>
         </div>
@@ -240,27 +244,32 @@
 
       <!-- SEÇÃO DRESS CODE -->
       <section id="dress-code" class="section-block">
-        <h2>Dress code</h2>
+        <h2>DRESS CODE</h2>
         <div class="separador">
           <span></span>
         </div>
         <div class="cerimonia-imagem">
           <img src="./imgs/dresscode-horizontal.png" alt="" />
         </div>
+        <p class="dress-code-legenda">PASSEIO COMPLETO</p>
         <div class="cerimonia-texto">
           <p>
             Queremos que vocês se sintam lindos, elegantes e, principalmente, à
             vontade para celebrar esse dia com a gente! Só temos um pequeno
-            pedido: o branco é exclusivo da noiva, pedimos que evitem também
-            tons de off-white, creme e estampas. Fora isso, sintam-se livres
-            para escolher a cor e o look que mais combinam com vocês.
+            pedido:
+            <strong style="-webkit-text-stroke: 0.5px currentColor">
+              o branco é exclusivo da noiva, pedimos que evitem também tons de
+              off-white, creme e estampas.</strong
+            >
+            Fora isso, sintam-se livres para escolher a cor e o look que mais
+            combinam com vocês.
           </p>
         </div>
       </section>
 
       <!-- SEÇÃO LISTA DE PRESENTES -->
       <section id="presentes" class="section-block">
-        <h2>Lista de Presentes</h2>
+        <h2>LISTA DE PRESENTES</h2>
         <div class="separador">
           <span></span>
         </div>
@@ -284,7 +293,7 @@
       </section>
 
       <section id="confirmacao" class="section-block">
-        <h2>Confirmação de Presença</h2>
+        <h2>CONFIRMAÇÃO DE PRESENÇA</h2>
         <div class="separador">
           <span></span>
         </div>
@@ -509,7 +518,6 @@
           <div class="gift-content">
               <div>
                   <p class="gift-name">${g.nome}</p>
-                  <p class="gift-desc">${g.descricao}</p>
               </div>
               <div class="gift-footer">
                   <span class="gift-price">R$ ${parseFloat(g.preco).toFixed(2)}</span>

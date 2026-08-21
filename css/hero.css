@@ -1,8 +1,9 @@
 /* ===== HERO (ORIGINAL) ===== */
+
 .hero {
   height: 100vh;
   position: relative;
-  overflow: hidden;
+  overflow: visible; /* Mudado de hidden para visible */
 
   display: flex;
   align-items: flex-end;
