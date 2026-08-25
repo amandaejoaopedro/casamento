@@ -519,24 +519,36 @@
           const card = document.createElement("div");
           card.className = "gift-card";
           card.innerHTML = `
-            <img src="${g.imagem}" class="gift-image" alt="${g.nome}">
-            <div class="gift-content">
-                <div>
-                    <p class="gift-name">${g.nome}</p>
-                    <p class="gift-desc">${g.descricao}</p>
-                </div>
-                <div class="gift-footer">
-                    <span class="gift-price">R$ ${parseFloat(g.preco).toFixed(2)}</span>
-                    <div class="gift-buttons">
-                        <button class="btn-gift" onclick="generatePixModal(${i})">Pix</button>
-                        <button class="btn-gift" onclick="generateCartaoModal(${i})">
-                            Cartão
-                        </button>
-                    </div>
-                </div>
-            </div>`;
+      <img src="${g.imagem}" class="gift-image" alt="${g.nome}">
+      <div class="gift-content">
+          <div>
+              <p class="gift-name">${g.nome}</p>
+              <p class="gift-desc">${g.descricao}</p>
+          </div>
+          <div class="gift-footer">
+              <span class="gift-price">R$ ${parseFloat(g.preco).toFixed(2)}</span>
+              <div class="gift-buttons">
+                  <button class="btn-gift" onclick="generatePixModal(${i})">Pix</button>
+                  <button class="btn-gift" onclick="generateCartaoModal(${i})">
+                      Cartão
+                  </button>
+              </div>
+          </div>
+      </div>`;
           grid.appendChild(card);
         });
+
+        // CORREÇÃO: Se a página foi aberta direto na âncora, força o scroll para o local correto
+        const hash = window.location.hash;
+        if (hash) {
+          // Aguarda a renderização do DOM e o layout estabilizar
+          setTimeout(() => {
+            const targetElement = document.querySelector(hash);
+            if (targetElement) {
+              targetElement.scrollIntoView({ behavior: "smooth" });
+            }
+          }, 150);
+        }
       }
       // Modal Controle
       function closeModal(id) {
