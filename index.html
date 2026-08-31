@@ -619,8 +619,7 @@
         alert("Pix copiado com sucesso!");
       }
 
-      // Algoritmo do PIX Copia e Cola estático
-      function generatePixPayload(key, name, city, amount, desc) {
+      function generatePixPayload(key, name, city, amount, type, desc) {
         const strTrim = (s) =>
           s
             .substring(0, 25)
@@ -629,19 +628,36 @@
             .toUpperCase();
         const format = (id, val) =>
           id + String(val.length).padStart(2, "0") + val;
-        const pixKey = /^\d{11}$/.test(key) ? `+55${key}` : key;
 
-        const info = format("00", "br.gov.bcb.pix") + format("01", pixKey);
+        // Trata a chave Pix com base na variável 'type'
+        let formattedKey = String(key).trim();
+        const cleanType = String(type || "")
+          .toLowerCase()
+          .trim();
+
+        if (cleanType.includes("telef") || cleanType.includes("celular")) {
+          const digitsOnly = formattedKey.replace(/\D/g, "");
+          if (digitsOnly.length === 11) {
+            formattedKey = `+55${digitsOnly}`;
+          } else if (digitsOnly.length === 13 && digitsOnly.startsWith("55")) {
+            formattedKey = `+${digitsOnly}`;
+          } else if (!formattedKey.startsWith("+")) {
+            formattedKey = `+${digitsOnly}`;
+          }
+        }
+
+        const info =
+          format("00", "br.gov.bcb.pix") + format("01", formattedKey);
         let p =
           format("00", "01") +
           format("26", info) +
           format("52", "0000") +
           format("53", "986") +
-          format("54", amount.toFixed(2)) +
+          format("54", Number(amount).toFixed(2)) +
           format("58", "BR") +
           format("59", strTrim(name)) +
           format("60", strTrim(city)) +
-          format("62", format("05", strTrim(desc).replace(/\s/g, ""))) +
+          format("62", format("05", "***")) +
           "6304";
         const crc = (d) => {
           let r = 0xffff;
