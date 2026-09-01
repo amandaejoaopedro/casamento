@@ -493,16 +493,209 @@
       }
       carregarDados();
 
-      // Banco de dados dos presentes
-      let gifts = [];
-
-      async function carregarPresentes() {
-        const response = await fetch(`${API}/presentes?sheet=${sheet}`);
-        gifts = await response.json();
-        renderGifts();
-      }
-      carregarPresentes();
-
+      let gifts = [
+        {
+          nome: "Só pra dizer que não dei nada",
+          descricao: "",
+          preco: "100",
+          imagem: "./imgs/presentes/Só pra dizer que não dei nada.jpg",
+          link_cartao: "https://mpago.la/2DdZnkp",
+        },
+        {
+          nome: "Adote um boleto dos noivos",
+          descricao: "",
+          preco: "150",
+          imagem: "./imgs/presentes/adote um boleto dos noivos.png",
+          link_cartao: "https://mpago.la/1fmch1N",
+        },
+        {
+          nome: "Kit miojo do fim do mês",
+          descricao: "",
+          preco: "200",
+          imagem: "./imgs/presentes/miojo.webp",
+          link_cartao: "https://mpago.la/1jRgLec",
+        },
+        {
+          nome: "Jogar o buque na sua direção",
+          descricao: "",
+          preco: "250",
+          imagem: "./imgs/presentes/Jogar o buque na sua direção.png",
+          link_cartao: "https://mpago.la/1AK4gta",
+        },
+        {
+          nome: "Pix para convencer a noiva a assistir anime",
+          descricao: "",
+          preco: "270",
+          imagem:
+            "./imgs/presentes/pix para convencer a noiva a assistir anime.png",
+          link_cartao: "https://mpago.la/2ErBm6t",
+        },
+        {
+          nome: "Patrocínio delivery por que a noiva não aguenta mais cozinhar",
+          descricao: "",
+          preco: "300",
+          imagem:
+            "./imgs/presentes/Patrocínio delivery por que a noiva não aguenta mais cozinhar.webp",
+          link_cartao: "https://mpago.la/2XSK47s",
+        },
+        {
+          nome: "Cota pro casal ir ao shopping sem o noivo negar nenhum presente",
+          descricao: "",
+          preco: "320",
+          imagem:
+            "./imgs/presentes/cota pro casal ir ao shopping sem o noivo negar nenhum presente.png",
+          link_cartao: "https://mpago.la/14xEUJS",
+        },
+        {
+          nome: "Cobertor para a noiva que sempre está coberta de razão",
+          descricao: "",
+          preco: "350",
+          imagem:
+            "./imgs/presentes/Cobertor para a noiva que sempre está coberta de razão.png",
+          link_cartao: "https://mpago.la/1WNFCS3",
+        },
+        {
+          nome: "Ajuda no Whey e Creatina dos noivos",
+          descricao: "",
+          preco: "370",
+          imagem: "./imgs/presentes/ajuda no whey e creatina dos noivos.png",
+          link_cartao: "https://mpago.la/1BNoGw5",
+        },
+        {
+          nome: "Não jogar o buque na sua direção",
+          descricao: "",
+          preco: "400",
+          imagem: "./imgs/presentes/Não jogar o buque na sua direção.png",
+          link_cartao: "https://mpago.la/1MNjaNK",
+        },
+        {
+          nome: "Robô para ajudar nas atividades de casa que os noivos ainda precisam desenvolver",
+          descricao: "",
+          preco: "420",
+          imagem:
+            "./imgs/presentes/Robo para ajudar nas atividades de casa que os noivos ainda precisam desenvolver.webp",
+          link_cartao: "https://mpago.la/1o47o9m",
+        },
+        {
+          nome: "Ajuda de custo para os ingressos de festas dos noivos",
+          descricao: "",
+          preco: "450",
+          imagem:
+            "./imgs/presentes/ajuda de custo para os ingressos de festas dos noivos.png",
+          link_cartao: "https://mpago.la/1scJFcL",
+        },
+        {
+          nome: "Jantar romantico preferido dos noivos",
+          descricao: "",
+          preco: "470",
+          imagem: "./imgs/presentes/jantar romantico preferido dos noivos.png",
+          link_cartao: "https://mpago.la/1fpmWKj",
+        },
+        {
+          nome: "1 mês de treinos dos mozis",
+          descricao: "",
+          preco: "500",
+          imagem: "./imgs/presentes/1 mês de treinos dos mozis.png",
+          link_cartao: "https://mpago.la/2Nx5LSX",
+        },
+        {
+          nome: "Ingresso para o proximo fortal",
+          descricao: "",
+          preco: "550",
+          imagem: "./imgs/presentes/ingresso para o proximo fortal.png",
+          link_cartao: "https://mpago.la/14pBSPn",
+        },
+        {
+          nome: "Pedir música para a banda",
+          descricao: "",
+          preco: "600",
+          imagem: "./imgs/presentes/Pedir música para a banda.png",
+          link_cartao: "https://mpago.la/2CA2wge",
+        },
+        {
+          nome: "Ajude o noivo a comprar o vídeo game portatil e nunca mais desgrudar da noiva",
+          descricao: "",
+          preco: "650",
+          imagem:
+            "./imgs/presentes/Ajude o noivo a comprar o vídeo game portatil e nunca mais desgrudar da noiva.png",
+          link_cartao: "https://mpago.la/2CAwSWT",
+        },
+        {
+          nome: "Cota para perguntar quando vem os minis mozis",
+          descricao: "",
+          preco: "700",
+          imagem:
+            "./imgs/presentes/cota para perguntar quando vem os minis mozis.jpg",
+          link_cartao: "https://mpago.la/2cGaMhT",
+        },
+        {
+          nome: "1 ano de aperol sptiz para a noiva",
+          descricao: "",
+          preco: "750",
+          imagem: "./imgs/presentes/1 ano de aperol sptiz para a noiva.png",
+          link_cartao: "https://mpago.la/21MuF6a",
+        },
+        {
+          nome: "2 anos de guaraná zero para o noivo",
+          descricao: "",
+          preco: "800",
+          imagem: "./imgs/presentes/2 anos de guaraná zero para o noivo.png",
+          link_cartao: "https://mpago.la/2uvf7dP",
+        },
+        {
+          nome: "Ajuda na manutenção do mounjaro da noiva",
+          descricao: "",
+          preco: "900",
+          imagem:
+            "./imgs/presentes/Ajuda na manutenção do mounjaro da noiva.png",
+          link_cartao: "https://mpago.la/2xPo9jh",
+        },
+        {
+          nome: "Ajude os noivos a comprar um irmãozinho pro Theo",
+          descricao: "",
+          preco: "950",
+          imagem:
+            "./imgs/presentes/Ajude os noivos a comprar um irmãozinho pro Theo.png",
+          link_cartao: "https://mpago.la/1eH7F2z",
+        },
+        {
+          nome: "Pedir para a noiva maneirar na bebida no dia do casamento",
+          descricao: "",
+          preco: "1000",
+          imagem:
+            "./imgs/presentes/pedir para a noiva maneirar na bebida no dia do casamento.png",
+          link_cartao: "https://mpago.la/1aK1Fc3",
+        },
+        {
+          nome: "Cota para ser o convidado mais amados",
+          descricao: "",
+          preco: "1100",
+          imagem: "./imgs/presentes/Cota para ser o convidado mais amados.jpg",
+          link_cartao: "https://mpago.la/2xmejFU",
+        },
+        {
+          nome: "Patrocínio da lua de mel",
+          descricao: "",
+          preco: "1200",
+          imagem: "./imgs/presentes/Patrocínio da lua de mel.png",
+          link_cartao: "https://mpago.la/12aztJy",
+        },
+        {
+          nome: "Ajude os noivos a irem para a Tomorrowland 2027",
+          descricao: "",
+          preco: "1300",
+          imagem:
+            "./imgs/presentes/Ajude os noivos a irem para a Tomorowland 2027.webp",
+          link_cartao: "https://mpago.la/2AiiVPR",
+        },
+        {
+          nome: "Pedir para levar um convidado",
+          descricao: "",
+          preco: "2000",
+          imagem: "./imgs/presentes/pedir para levar um convidado.jpg",
+          link_cartao: "https://mpago.la/14kaQeq",
+        },
+      ];
       function renderGifts() {
         const grid = document.getElementById("giftGrid");
         grid.innerHTML = "";
@@ -588,6 +781,9 @@
 
         const link = (g.link_cartao || "").trim();
         const btnLinkCartao = document.getElementById("btnLinkCartao");
+
+        document.getElementById("presenteNomeCartao").value = "";
+        document.getElementById("presenteMensagemCartao").value = "";
 
         document.getElementById("cartaoGiftName").innerText =
           g.nome + " - R$ " + parseFloat(g.preco).toFixed(2);
