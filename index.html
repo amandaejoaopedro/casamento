@@ -495,13 +495,6 @@
 
       let gifts = [
         {
-          nome: "Só pra dizer que não dei nada",
-          descricao: "",
-          preco: "100",
-          imagem: "./imgs/presentes/Só pra dizer que não dei nada.jpg",
-          link_cartao: "https://mpago.la/2DdZnkp",
-        },
-        {
           nome: "Adote um boleto dos noivos",
           descricao: "",
           preco: "150",
@@ -700,13 +693,7 @@
         const grid = document.getElementById("giftGrid");
         grid.innerHTML = "";
 
-        const primeiro = gifts[0];
-        const restantes = gifts.slice(1);
-
-        restantes.sort(() => Math.random() - 0.5);
-
-        // Atualiza o array original com a nova ordem
-        gifts = [primeiro, ...restantes];
+        gifts.sort(() => Math.random() - 0.5);
 
         gifts.forEach((g, i) => {
           const card = document.createElement("div");
